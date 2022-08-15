@@ -13,11 +13,10 @@
 
   <body>
   <%= render 'navbar' %>
-      <%= yield %>
-      <hr>
-      <%= render 'footer' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+      <hr>
+      <%= render 'footer' %>
   </body>
 </html>
