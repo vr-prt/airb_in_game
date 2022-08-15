@@ -1,5 +1,5 @@
 <ul>
   <% @game_worlds.each do |game| %>
-    <li><%= link_to game.name %></li>
+    <li><%= link_to game.name, game_world_path(game) %></li>
   <% end %>
 </ul>
