@@ -1,4 +1,4 @@
-puts "Creating 20 fake users..."
+puts "Creating 20 fake users and game worlds..."
 
 20.times do
  user = User.create(
@@ -16,10 +16,5 @@ puts "Creating 20 fake users..."
   game_world.save!
 end
 
-# puts "20 fake users created successfully"
-
-# puts "Creating 10 Game Worlds"
-
-# puts "20 fake game worlds created successfully"
-
-# puts "Seeds finished! Goodbye"
+puts "Successfully created and added to the database"
+puts "Goodbye!"
