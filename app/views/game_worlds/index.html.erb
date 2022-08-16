@@ -1,5 +1,68 @@
-<ul>
-  <% @game_worlds.each do |game| %>
-    <li><%= link_to game.name, game_world_path(game) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="card-trip m-2">
+      <img src="https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp">
+      <div class="card-trip-infos">
+        <div>
+          <h2>Game name</h2>
+          <p>Description</p>
+          <% @game_worlds.each do |game| %>
+            <h2><%= link_to game.name, game_world_path(game) %></h2>
+            <p><%= game.description %></p>
+        <% end %>
+        </div>
+        <p>⭐️⭐️⭐️</p>
+          <%# <h2 class="card-trip-pricing"><%=game_world.user %>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+    <div class="card-trip m-2">
+      <img src="https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp">
+      <div class="card-trip-infos">
+        <div>
+          <h2>Game name</h2>
+          <p>Description</p>
+          <% @game_worlds.each do |game| %>
+            <h2><%= link_to game.name, game_world_path(game) %></h2>
+            <p><%= game.description %></p>
+        <% end %>
+        </div>
+        <p>⭐️⭐️⭐️</p>
+          <%# <h2 class="card-trip-pricing"><%=game_world.user %>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+    <div class="card-trip m-2">
+      <img src="https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp">
+      <div class="card-trip-infos">
+        <div>
+          <h2>Game name</h2>
+          <p>Description</p>
+          <% @game_worlds.each do |game| %>
+            <h2><%= link_to game.name, game_world_path(game) %></h2>
+            <p><%= game.description %></p>
+        <% end %>
+        </div>
+        <p>⭐️⭐️⭐️</p>
+          <%# <h2 class="card-trip-pricing"><%=game_world.user %>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+    <div class="card-trip m-2">
+      <img src="https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp">
+      <div class="card-trip-infos">
+        <div>
+          <h2>Game name</h2>
+          <p>Description</p>
+          <% @game_worlds.each do |game| %>
+            <h2><%= link_to game.name, game_world_path(game) %></h2>
+            <p><%= game.description %></p>
+        <% end %>
+        </div>
+        <p>⭐️⭐️⭐️</p>
+          <%# <h2 class="card-trip-pricing"><%=game_world.user %>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+  </div>
+</div>
