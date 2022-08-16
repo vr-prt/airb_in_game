@@ -5,8 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :game_worlds
-
-  validates :email, :username, :password, presence: true
-  validates :email, :username, uniqueness: true
-  validates :username, :password, length: { in: 6..50 }
 end
