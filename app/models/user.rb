@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :game_worlds
 
-  validates :email, :username, presence: true
+  validates :email, :username, :password, presence: true
+  validates :email, :username, :password, length: { in: 6..50 }
 end
