@@ -2,7 +2,9 @@ class GameWorldsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    raise
+    game_params = params[:search][:name].downcase
+    return @game_worlds = GameWorld.where("LOWER(name) LIKE ?", "%#{game_params}%") if params[:search]
+
     @game_worlds = GameWorld.all
   end
 
