@@ -72,10 +72,19 @@
   grid-gap: 16px;
 }
 
+.card-trip-infos {
+  position: relative;
+}
+
 .go-btn {
   border: 1px solid #333;
   border-radius: 50%;
   padding: 8px;
+  position: absolute;
+  top: -16px;
+  right: 16px;
+  background-color: white;
+  color: #333;
 }
 
 .card-trip a {
@@ -90,4 +99,22 @@
 .card-trip a:hover {
   color: #D0851D;
   text-decoration: underline;
+}
+
+.slogan {
+  color: white;
+  font-size: 24px;
+}
+
+.filter-btn {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+}
+
+.filter-btn a {
+  text-decoration: none;
+  color: white;
 }
