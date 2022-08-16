@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/hollywoodxj/image/upload/v1660599681/AirBinGameLogo_pci49d.png" %>
     <% end %>
 
@@ -10,7 +10,7 @@
 
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
       <div class="search-form-control form-group d-flex">
-        <input class="form-control string required" type="text" name="search[query]" placeholder="Search for a Game World" id="search_query" />
+        <input class="form-control string required" type="text" name="/game_worlds/search?query" placeholder="Search for a Game World" id="search_query" />
         <button name="button" type="submit" class="btn">
           <i class="fas fa-search"></i>
         </button>
@@ -22,7 +22,7 @@
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", "/", class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
