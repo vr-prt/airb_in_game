@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/hollywoodxj/image/upload/v1660599681/AirBinGameLogo_pci49d.png" %>
+    <%= link_to "/", class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/hollywoodxj/image/upload/v1660667197/AirBinGameLogo_drajzi.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
 
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
       <div class="search-form-control form-group d-flex">
-        <input class="form-control string required" type="text" name="search[query]" placeholder="Search for a Game World" id="search_query" />
+        <input class="form-control string required" type="text" name="/game_worlds/search?query" placeholder="Search for a Game World" id="search_query" />
         <button name="button" type="submit" class="btn">
           <i class="fas fa-search"></i>
         </button>
@@ -20,9 +20,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <ul class="navbar-nav me-auto">
-        <%# if user_signed_in? %>
+        <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", "/", class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
@@ -34,14 +34,14 @@
               <%= link_to "My Bookings", "#", class: "dropdown-item" %>
               <%= link_to "My Game Worlds", "#", class: "dropdown-item" %>
               <%= link_to "Pending Requests", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
