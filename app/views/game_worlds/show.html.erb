@@ -1,8 +1,50 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp);">
-  <div class="container">
-    <h1 class="text-center"><%= @game_world.name %></h1>
-  </div>
+<div class="show-position">
+  <h1><%= @game_world.name %></h1>
 </div>
 
 
-<p><%= @game_world.description %></p>
+
+<div class="container card-show">
+    <div id="carouselExampleIndicators" class="carousel slide show-position " data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner show-design">
+        <div class="carousel-item active">
+          <img src="https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp" class="d-block " alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://preview.redd.it/uoz70mltoyb11.jpg?auto=webp&s=d9bf6027559928dd47e206dba7afc0c2cdf25f67" class="d-block " alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://ssb.wiki.gallery/images/thumb/3/3b/SSBU-Temple.png/1200px-SSBU-Temple.png" class="d-block " alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="show-position">
+      <div class="description-show">
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= @game_world.name %></h2>
+
+            <p><%= @game_world.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="show-position">
+  <a class="btn btn-reserve" href="#">Reserve Now!</i></a>
+</div>
