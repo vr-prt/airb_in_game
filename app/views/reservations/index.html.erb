@@ -8,10 +8,13 @@
                 <img src="https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp" />
                 <div class="card-trip-infos">
                   <div>
-                    <%= link_to reservation_path(reservation) do %>
-                      <p style="font-size:20px">Reservation N°<%= reservation.id %></p>
-                      <p style="font-size: 14px"><%= reservation.game_world.name %></p>
-                    <% end %>
+                    <div>
+                      <%= link_to reservation_path(reservation) do %>
+                        <p style="font-size:20px">Reservation N°<%= reservation.id %></p>
+                        <p style="font-size: 14px"><%= reservation.game_world.name %></p>
+                      <% end %>
+                    </div>
+                    <h6 class="status-tag"><%= reservation.status == 0 ? "✅" : "🙄" %></h6>
                   </div>
                 </div>
               </div>

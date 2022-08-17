@@ -163,3 +163,15 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.status-tag {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    padding: 8px;
+    position: absolute;
+    top: -16px;
+    right: 16px;
+    background-color: #D0851D;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
