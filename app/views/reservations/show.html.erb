@@ -1,1 +1,14 @@
-<%= @reservation %>
+<div class="container">
+  <h1>Booking request N°<%= @reservation.id %></h1>
+  <h3>In <%= @reservation.game_world.name %></h3>
+  <p class="mb-4">Hosted by <%= @reservation.game_world.user.username %></p>
+  <p>Start date: <%= @reservation.start_date %></p>
+  <p class="mb-4">End date: <%= @reservation.end_date %></p>
+  <% if @reservation.status == 0 %>
+    <p class="p-3 bg-warning d-inline">Pending</p>
+  <% elsif @reservation.status == 1 %>
+    <p class="p-3 bg-success d-inline">Confirmed</p>
+  <% elsif @reservation.status == 2 %>
+    <p class="p-3 bg-info d-inline">Done</p>
+  <% end %>
+</div>
