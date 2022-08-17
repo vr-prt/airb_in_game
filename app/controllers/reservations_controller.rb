@@ -3,7 +3,8 @@ class ReservationsController < ApplicationController
   before_action :set_game_world, only: %i[new create]
 
   def index
-    @reservations = Reservation.all
+    @user = current_user
+    @reservations = @user.reservations
   end
 
   def show
