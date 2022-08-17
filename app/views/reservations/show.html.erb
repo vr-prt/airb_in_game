@@ -13,6 +13,10 @@
   <% end %>
 
   <div class="mt-4">
+    <%= link_to 'Edit this booking request', edit_reservation_path(@reservation) %>
+  </div>
+
+  <div class="mt-4">
     <%= link_to 'Cancel this booking request', reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking request?"} %>
   </div>
 </div>
