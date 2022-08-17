@@ -11,6 +11,25 @@
   left: 50%;
 }
 
+.btn-ghost-reservation:hover {
+  opacity: 0.7;
+  border: 1px solid #30475E;
+  background-color: #30475E;
+}
+
+.btn-ghost-reservation {
+  display: flex;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  display: flex;
+  width: 210px;
+  justify-content: center;
+  left: 50%;
+}
+
 .btn-ghost:hover {
   opacity: 0.7;
   border: 1px solid #D0851D;
@@ -58,7 +77,7 @@
   text-decoration: none;
   color: white;
  }
- 
+
 .btn-go-back {
     appearance: auto;
     user-select: none;
@@ -74,4 +93,13 @@
     border-style: outset;
     border-color: grey;
     border-image: initial;
+}
+
+.btn-reservation a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-reservation a:hover {
+  text-decoration: underline;
 }
