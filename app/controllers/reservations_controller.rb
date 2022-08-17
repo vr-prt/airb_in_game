@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show edit update]
+  before_action :set_reservation, only: %i[show edit update destroy]
   before_action :set_game_world, only: %i[new create]
 
   def index
@@ -31,6 +31,8 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    @reservation.destroy
+    redirect_to reservations_path, status: :see_other
   end
 
   private
