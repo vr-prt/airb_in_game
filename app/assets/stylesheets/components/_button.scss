@@ -1,15 +1,20 @@
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
+  display: flex;
+  color: #fff;
+  border: 1px solid #fff;
   border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
+  font-weight: bold;
   transition: opacity 0.3s ease;
+  display: flex;
+  width: 210px;
+  justify-content: center;
+  left: 50%;
 }
 
 .btn-ghost:hover {
-  opacity: 1;
+  opacity: 0.7;
+  border: 1px solid #D0851D;
+  background-color: #D0851D;
 }
 
 .btn-flat {
@@ -22,7 +27,6 @@
 
 .btn-flat:hover {
   background: #4D04C4;
-  color: white;
 }
 
 .btn-gradient {
@@ -50,6 +54,11 @@
   transition: background 0.3s ease;
 }
 
+.added-btn a {
+  text-decoration: none;
+  color: white;
+ }
+ 
 .btn-go-back {
     appearance: auto;
     user-select: none;
