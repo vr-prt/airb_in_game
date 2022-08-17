@@ -2,8 +2,6 @@
   <h1><%= @game_world.name %></h1>
 </div>
 
-
-
 <div class="container card-show">
     <div id="carouselExampleIndicators" class="carousel slide show-position " data-bs-ride="true">
       <div class="carousel-indicators">
@@ -37,7 +35,6 @@
         <div class="card-trip-infos">
           <div>
             <h2><%= @game_world.name %></h2>
-
             <p><%= @game_world.description %></p>
           </div>
         </div>
@@ -46,5 +43,5 @@
 </div>
 
 <div class="show-position">
-  <a class="btn btn-reserve" href="#">Reserve Now!</i></a>
+  <%= link_to "Reserve Now", new_game_world_reservation_path(@game_world), class: "btn btn-reserve" %>
 </div>
