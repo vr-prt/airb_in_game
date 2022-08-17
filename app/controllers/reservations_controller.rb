@@ -1,9 +1,10 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show]
+  before_action :set_reservation, only: %i[show edit update destroy]
   before_action :set_game_world, only: %i[new create]
 
   def index
-    @reservations = Reservation.all
+    @user = current_user
+    @reservations = @user.reservations
   end
 
   def show
@@ -15,25 +16,24 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.start_date = params[:reservation][:start_date]
-    @reservation.end_date = params[:reservation][:end_date]
+    build_reservation_date
     @reservation.game_world = @game_world
     @reservation.user = current_user
 
-    if @reservation.save
-      redirect_to reservation_path(@reservation)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    save_reservation(:new)
   end
 
   def edit
   end
 
   def update
+    build_reservation_date
+    save_reservation(:edit)
   end
 
   def destroy
+    @reservation.destroy
+    redirect_to reservations_path, status: :see_other
   end
 
   private
@@ -48,5 +48,18 @@ class ReservationsController < ApplicationController
 
   def set_game_world
     @game_world = GameWorld.find(params[:game_world_id])
+  end
+
+  def build_reservation_date
+    @reservation.start_date = params[:reservation][:start_date]
+    @reservation.end_date = params[:reservation][:end_date]
+  end
+
+  def save_reservation(action)
+    if @reservation.save
+      redirect_to reservation_path(@reservation)
+    else
+      render action, status: :unprocessable_entity
+    end
   end
 end
