@@ -50,3 +50,23 @@
   width: 180px;
   transition: background 0.3s ease;
 }
+
+
+.btn-go-back {
+    appearance: auto;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    color: buttontext;
+    padding: 1px 6px;
+    border-width: 0.5px;
+    border-style: outset;
+    border-color: grey;
+    border-image: initial;
+
+
+}
