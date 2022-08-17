@@ -12,9 +12,10 @@
                       <%= link_to reservation_path(reservation) do %>
                         <p style="font-size:20px">Reservation N°<%= reservation.id %></p>
                         <p style="font-size: 14px"><%= reservation.game_world.name %></p>
+                         <p style="font-size: 14px">from <%= reservation.start_date %> to <%= reservation.end_date %> </p>
                       <% end %>
                     </div>
-                    <h6 class="status-tag"><%= reservation.status == 0 ? "✅" : "🙄" %></h6>
+                    <h6 class="status-tag"><%= reservation.status == 0 ? "✅" : "⏳" %></h6>
                   </div>
                 </div>
               </div>
