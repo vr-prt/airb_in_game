@@ -15,8 +15,8 @@ main_game_worlds = [
     description: 'Visit the tropical Isle Delfino, where Mario, Toadsworth, Princess Peach, and five Toads are taking a vacation.'
   ),
   GameWorld.new(
-    name: 'Pokémon Sword',
-    description: 'Become the Pokémon Champion, this time in the new Galar region, which is based on the United Kingdom.'
+    name: 'Pokemon Sword',
+    description: 'Become the Pokemon Champion, this time in the new Galar region, which is based on the United Kingdom.'
   ),
   GameWorld.new(
     name: 'The Legend of Zelda: Ocarina of Time',
