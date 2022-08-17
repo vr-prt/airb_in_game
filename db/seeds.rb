@@ -43,7 +43,7 @@ reservation2 = Reservation.new(
   start_date: Date.new(2022, 9, 1),
   end_date: Date.new(2022, 9, 8)
 )
-reservation2.game_world = GameWorld.find_by(name: 'Pokémon Sword')
+reservation2.game_world = GameWorld.find_by(name: 'Pokemon Sword')
 reservation2.user = main_user
 reservation2.save!
 puts "Successfully created reservation linked to #{reservation2.game_world.name}"
