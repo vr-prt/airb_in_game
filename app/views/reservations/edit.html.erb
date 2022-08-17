@@ -5,6 +5,6 @@
   <%= simple_form_for(@reservation) do |f| %>
     <%= f.input :start_date, as: :date, html5: true %>
     <%= f.input :end_date, as: :date, html5: true %>
-    <%= f.submit %>
+    <%= f.submit %> <%= link_to "Go Back", reservations_path, class: "btn btn-go-back" %>
   <% end %>
 </div>
