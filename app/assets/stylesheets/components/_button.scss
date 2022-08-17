@@ -44,7 +44,6 @@
   color: white;
 }
 
-
 .btn-reserve {
   margin-top: 2px;
   color: white;
@@ -58,4 +57,21 @@
 .added-btn a {
   text-decoration: none;
   color: white;
+ }
+ 
+.btn-go-back {
+    appearance: auto;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    color: buttontext;
+    padding: 1px 6px;
+    border-width: 0.5px;
+    border-style: outset;
+    border-color: grey;
+    border-image: initial;
 }
