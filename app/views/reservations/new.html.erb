@@ -1,6 +1,7 @@
 <div class="container">
   <h1>Book an amazing experience</h1>
-  <h3 class="mb-4">Inside <%= @game_world.name %></h3>
+  <h3>Inside <%= @game_world.name %></h3>
+  <p class="mb-4">Hosted by <%= @game_world.user.username %></p>
   <%= simple_form_for([@game_world, @reservation]) do |f| %>
     <%= f.input :start_date, as: :date, html5: true %>
     <%= f.input :end_date, as: :date, html5: true %>
