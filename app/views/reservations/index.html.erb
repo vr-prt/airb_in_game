@@ -1,5 +1,9 @@
 <ul>
   <% @reservations.each do |reservation| %>
-    <li><%= link_to reservation, reservation_path(reservation) %></li>
+    <li>
+      <%= link_to reservation_path(reservation) do %>
+        <p>Reservation N°<%= reservation.id %> of <%= reservation.user.username %> in <%= reservation.game_world.name %></p>
+      <% end %>
+    </li>
   <% end %>
 </ul>
