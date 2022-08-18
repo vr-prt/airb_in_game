@@ -5,6 +5,13 @@ class GameWorldsController < ApplicationController
   before_action :set_user, only: %i[show create my_game_worlds]
 
   def index
+    @markers = @game_worlds.geocoded.map do |game_world|
+      {
+        lat: game_world.latitude,
+        lng: game_world.longitude
+      }
+    end
+
     if params[:search]
       @game_worlds = GameWorld.where("name ILIKE ? OR description ILIKE ?", "%#{params[:search][:name]}%", "%#{params[:search][:name]}%")
     else
