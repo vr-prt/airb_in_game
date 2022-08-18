@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :reservations, except: %i[new create]
+
+  get '/my_game_worlds', to: 'game_worlds#my_game_worlds'
 end
