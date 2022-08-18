@@ -30,6 +30,11 @@ class GameWorldsController < ApplicationController
     end
   end
 
+  def my_game_worlds
+    @user = current_user
+    @game_worlds = @user.game_worlds
+  end
+
   private
 
   def game_world_params
