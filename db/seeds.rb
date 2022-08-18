@@ -81,7 +81,8 @@ puts 'Generating random users, game worlds and reservations...'
 
   reservation = Reservation.new(
     start_date: Faker::Date.between(from: '2022-07-23', to: '2022-09-25'),
-    end_date: Faker::Date.between(from: '2022-09-26', to: '2022-10-12')
+    end_date: Faker::Date.between(from: '2022-09-26', to: '2022-10-12'),
+    status: rand(0..2)
   )
 
   reservation.user = user
