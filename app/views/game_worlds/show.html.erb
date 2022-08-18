@@ -43,8 +43,10 @@
 </div>
 
 <div class="show-position">
-  <%= link_to "Reserve Now", new_game_world_reservation_path(@game_world), class: "btn btn-reserve" %>
+  <%= link_to "Reserve Now", new_game_world_reservation_path(@game_world), class: "m-3 btn btn-flat" %>
   <% if @game_world.user == @user %>
-    <%= link_to "Delete game world", game_world_path(@game_world), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this game world?"} %>
+  <div>
+    <%= link_to "Delete world", game_world_path(@game_world), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this game world?"}, class: "m-3 btn btn-flat", style: "background-color:red" %>
+  </div>
   <% end %>
 </div>

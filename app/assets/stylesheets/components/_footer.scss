@@ -1,17 +1,16 @@
 .footer {
-  background: transparent;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
-  margin-top: 0;
-  margin-bottom: 24px;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - var(--scrollbar-gutter,0%));
 }
 .footer-links {
   display: flex;
+  justify-content: center;
   align-items: center;
+  border: 1px solid lightgrey;
+  background: #AABBC3;
 }
 .footer-links a {
   color: white;
@@ -23,4 +22,12 @@
 .footer-links a:hover {
   opacity: 1;
   color: #30475E;
+}
+
+.footer-text {
+  opacity: .5;
+  margin-left: 50px;
+  margin-top: 15px;
+  align-items: center;
+  text-align: center;
 }
