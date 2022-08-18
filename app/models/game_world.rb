@@ -7,5 +7,6 @@ class GameWorld < ApplicationRecord
   geocoded_by :address
 
   validates :name, :description, :photos, presence: true
+
   after_validation :geocode, if: :will_save_change_to_address?
 end

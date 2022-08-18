@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :game_worlds
-  has_many :reservations
+  has_many :reservations, through: :game_worlds
 end
