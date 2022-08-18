@@ -1,9 +1,9 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show edit update destroy]
+  before_action :set_reservation, only: %i[show edit update destroy owner_reservation owner_destroy]
   before_action :set_game_world, only: %i[new create]
+  before_action :set_user, only: %i[index]
 
   def index
-    @user = current_user
     @reservations = @user.reservations
   end
 
@@ -16,7 +16,9 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    build_reservation_date
+
+    build_reservation
+
     @reservation.game_world = @game_world
     @reservation.user = current_user
 
@@ -27,8 +29,17 @@ class ReservationsController < ApplicationController
   end
 
   def update
-    build_reservation_date
-    save_reservation(:edit)
+    @reservation.update(reservation_params)
+
+    if params[:reservation][:status].present?
+      if @reservation.save
+        redirect_to owner_reservation_path(@reservation)
+      else
+        render :owner_reservation, status: :unprocessable_entity
+      end
+    else
+      save_reservation(:edit)
+    end
   end
 
   def destroy
@@ -36,10 +47,27 @@ class ReservationsController < ApplicationController
     redirect_to reservations_path, status: :see_other
   end
 
+  def owner_reservations
+    @reservations = Reservation.where(game_worlds: current_user.game_worlds)
+  end
+
+  def owner_reservation
+    @statuses = { 'Confirm' => 'confirmed', 'Decline' => 'declined' }
+  end
+
+  def owner_destroy
+    @reservation.destroy
+    redirect_to owner_reservations_path, status: :see_other
+  end
+
   private
 
+  def set_user
+    @user = current_user
+  end
+
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date)
+    params.require(:reservation).permit(:start_date, :end_date, :status)
   end
 
   def set_reservation
@@ -50,16 +78,16 @@ class ReservationsController < ApplicationController
     @game_world = GameWorld.find(params[:game_world_id])
   end
 
-  def build_reservation_date
+  def build_reservation
     @reservation.start_date = params[:reservation][:start_date]
     @reservation.end_date = params[:reservation][:end_date]
   end
 
-  def save_reservation(action)
+  def save_reservation(action_if_not_saved)
     if @reservation.save
       redirect_to reservation_path(@reservation)
     else
-      render action, status: :unprocessable_entity
+      render action_if_not_saved, status: :unprocessable_entity
     end
   end
 end

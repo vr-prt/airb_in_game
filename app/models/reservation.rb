@@ -9,6 +9,7 @@ class Reservation < ApplicationRecord
   enum status: {
     pending: 0,
     confirmed: 1,
-    done: 2
+    declined: 2,
+    done: 3
   }
 end
