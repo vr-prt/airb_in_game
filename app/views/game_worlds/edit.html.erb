@@ -1,7 +1,11 @@
 <div class="container">
-  <%= simple_form_for(@game_world) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.submit %> <%= link_to "Go Back", game_worlds_path, class: "btn btn-go-back" %>
-  <% end %>
+  <div class="row justify-content-center">
+    <div class="col-sm-6 log-in-form m-5">
+      <%= simple_form_for(@game_world) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.submit %> <%= link_to "Go Back", game_worlds_path, class: "btn btn-go-back" %>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -1,27 +1,31 @@
 <div class="container">
-  <h1>Booking request N°<%= @reservation.id %></h1>
-  <h3>In <%= @reservation.game_world.name %></h3>
-  <p class="mb-4">Hosted by <%= @reservation.game_world.user.username %></p>
-  <p>Start date: <%= @reservation.start_date %></p>
-  <p class="mb-4">End date: <%= @reservation.end_date %></p>
-  <% if @reservation.status == 0 %>
-    <p class="p-3 bg-warning d-inline">Pending</p>
-  <% elsif @reservation.status == 1 %>
-    <p class="p-3 bg-success d-inline">Confirmed</p>
-  <% elsif @reservation.status == 2 %>
-    <p class="p-3 bg-info d-inline">Done</p>
-  <% end %>
-</div>
+  <div class="row justify-content-center">
+    <div class="col-sm-6 log-in-form m-5">
+      <h1>Booking request N°<%= @reservation.id %></h1>
+      <h3>In <%= @reservation.game_world.name %></h3>
+      <p class="mb-4">Hosted by <%= @reservation.game_world.user.username %></p>
+      <p>Start date: <%= @reservation.start_date %></p>
+      <p class="mb-4">End date: <%= @reservation.end_date %></p>
+      <% if @reservation.status == 0 %>
+        <p class="p-3 bg-warning d-inline">Pending</p>
+      <% elsif @reservation.status == 1 %>
+        <p class="p-3 bg-success d-inline">Confirmed</p>
+      <% elsif @reservation.status == 2 %>
+        <p class="p-3 bg-info d-inline">Done</p>
+      <% end %>
 
-<div class="container d-flex justify-content-center">
-  <div class="mt-5 m-3 btn btn-ghost-reservation btn-reservation">
-    <%= link_to 'Go to my reservations', reservations_path(@reservation) %>
-  </div>
-  <div class="mt-5 m-3 btn btn-success btn-reservation">
-    <%= link_to 'Edit this booking request', edit_reservation_path(@reservation) %>
-  </div>
+      <div class="container d-flex justify-content-center">
+        <div class="mt-5 m-3 btn btn-ghost-reservation btn-reservation">
+          <%= link_to 'Go to my reservations', reservations_path(@reservation) %>
+        </div>
+        <div class="mt-5 m-3 btn btn-success btn-reservation">
+          <%= link_to 'Edit this booking request', edit_reservation_path(@reservation) %>
+        </div>
 
-  <div class="mt-5 m-3 btn btn-danger btn-reservation">
-    <%= link_to 'Cancel this booking request', reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking request?"} %>
+        <div class="mt-5 m-3 btn btn-danger btn-reservation">
+          <%= link_to 'Cancel this booking request', reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking request?"} %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
