@@ -8,7 +8,8 @@ class GameWorldsController < ApplicationController
     @markers = @game_worlds.geocoded.map do |game_world|
       {
         lat: game_world.latitude,
-        lng: game_world.longitude
+        lng: game_world.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {game_world: game_world})
       }
     end
 
