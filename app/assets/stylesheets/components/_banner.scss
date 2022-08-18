@@ -2,7 +2,8 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  height: 500px;
+  height: 100vh;
+  justify-content: space-between;
 }
 
 .banner h1 {
@@ -11,6 +12,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .banner p {
@@ -59,4 +61,12 @@
   padding: 150px 0;
   height: 900px;
   width: 100%;
+}
+
+.banner-icons {
+  height: 200px;
+}
+
+.btn-homepage {
+  margin-left: 350px;
 }

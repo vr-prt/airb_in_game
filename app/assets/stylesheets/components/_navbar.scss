@@ -6,7 +6,8 @@
   right: 0;
   justify-content: space-between;
   z-index: 200;
-  background-color: #AABBC3;
+  color: #fff;
+  background: linear-gradient(90deg, rgba(14,20,35,1) 0%, rgba(7,51,81,1) 50%, rgba(39,42,53,1) 67%);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,4 +20,9 @@
 
 .relative {
   position: relative;
+}
+
+.nav-link {
+  color: #fff;
+  margin-right: 16px;
 }
