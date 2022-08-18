@@ -23,13 +23,34 @@
 .banner h2 {
   color: white;
   font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .index-banner {
-  width: 100%;
-  margin: 0 auto;
+  background-image: url(https://res.cloudinary.com/dvbzytnxf/image/upload/v1660788208/IMG_0030_n7z8o6.jpg);
+  width: 100vw;
+  height: 240px;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-banner h2 {
+  color: white;
+  font-size: 56px;
+  font-family: 'Silkscreen', cursive;
+  text-shadow: 1px 1px 3px rgba(0,0,0,1);
+}
+
+.index-banner h6 {
+  font-family: 'Silkscreen', cursive;
 }
 
 .reservation-banner {

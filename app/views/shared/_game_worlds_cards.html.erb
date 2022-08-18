@@ -3,14 +3,14 @@
     <% @game_worlds.each do |game| %>
       <div class="card-trip m-2">
         <%= cl_image_tag game.photo.key %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= link_to game.name, game_world_path(game) %></h2>
-            <p><%= game.description %></p>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to game.name, game_world_path(game) %></h2>
+              <p><%= game.description %></p>
+            </div>
+            <h6 class="go-btn"><%= link_to "🎮", game_world_path(game) %></h6>
           </div>
-          <h6 class="go-btn"><%= link_to "Go", game_world_path(game) %></h6>
-        </div>
-      </div>
-    <% end %>
+       </div>
+     <% end %>
   </div>
 </div>
