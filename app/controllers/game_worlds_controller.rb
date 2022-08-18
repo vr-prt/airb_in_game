@@ -22,7 +22,6 @@ class GameWorldsController < ApplicationController
     @user = current_user
     @game_world = GameWorld.new(game_world_params)
     @game_world.user = @user
-
     if @game_world.save
       redirect_to game_world_path(@game_world)
     else
@@ -35,6 +34,4 @@ class GameWorldsController < ApplicationController
   def game_world_params
     params.require(:game_world).permit(:name, :description, :photo)
   end
-
-
 end
