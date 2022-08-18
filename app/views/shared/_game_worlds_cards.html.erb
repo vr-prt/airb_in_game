@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <% @game_worlds.each do |game| %>
       <div class="card-trip m-2">
-        <%= cl_image_tag game.photo.key %>
+        <%= cl_image_tag game.photo.key if game.photo.attached? %>
           <div class="card-trip-infos">
             <div>
               <h2><%= link_to game.name, game_world_path(game) %></h2>
