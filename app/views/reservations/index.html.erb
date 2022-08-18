@@ -15,7 +15,7 @@
                          <p style="font-size: 14px">from <%= reservation.start_date %> to <%= reservation.end_date %> </p>
                       <% end %>
                     </div>
-                    <h6 class="status-tag"><%= reservation.status == 0 ? "✅" : "⏳" %></h6>
+                    <h6 class="status-tag"><%= reservation.status == "confirmed" ? "✅" : "⏳" %></h6>
                   </div>
                 </div>
               </div>
