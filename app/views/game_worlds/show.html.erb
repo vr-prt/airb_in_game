@@ -10,16 +10,23 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner show-design">
-        <div class="carousel-item active">
-          <%= cl_image_tag @game_world.photos[0].key, class: "d-block show-img" if @game_world.photos.attached? %>
-        </div>
-        <div class="carousel-item">
-           <%= cl_image_tag @game_world.photos[1].key, class: "d-block show-img" if @game_world.photos.attached? %>
-        </div>
-        <div class="carousel-item">
-           <%= cl_image_tag @game_world.photos[2].key, class: "d-block show-img" if @game_world.photos.attached? %>
-        </div>
-      </div>
+        <%# <div class="carousel-item active">test</div> %>
+
+
+
+          <% @game_world.photos.each_with_index do |photo, index| %>
+            <% if index == 0  %>
+              <div class="carousel-item active">
+                <%= cl_image_tag photo.key, class: "d-block show-img" %>
+              </div>
+            <% else %>
+              <div class="carousel-item">
+                <%= cl_image_tag photo.key, class: "d-block show-img" %>
+              </div>
+            <% end %>
+          <% end %>
+
+
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -30,16 +37,6 @@
       </button>
     </div>
 
-    <div class="show-position">
-      <div class="description-show">
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= @game_world.name %></h2>
-            <p><%= @game_world.description %></p>
-          </div>
-        </div>
-      </div>
-    </div>
 </div>
 
 <div class="show-position">
