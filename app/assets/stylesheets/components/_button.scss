@@ -16,6 +16,26 @@
   background-color: #30475E;
 }
 
+.btn-ghost-login:hover {
+  border: 1px solid #30475E;
+  background-color: #30475E;
+  color: #fff;
+}
+
+.btn-ghost-login {
+  display: flex;
+  color: #fff;
+  background-color: rgba($color: #30475E, $alpha: 0.5);
+  border: 1px solid #fff;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  display: flex;
+  width: 150px;
+  justify-content: center;
+  left: 50%;
+}
+
 .btn-ghost-reservation {
   display: flex;
   color: #fff;
