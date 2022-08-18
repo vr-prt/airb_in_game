@@ -6,7 +6,7 @@ class GameWorldsController < ApplicationController
 
   def index
     if params[:search]
-      @game_worlds = GameWorld.where("name ILIKE ?", "%#{params[:search][:name]}%")
+      @game_worlds = GameWorld.where("name ILIKE ? OR description ILIKE ?", "%#{params[:search][:name]}%", "%#{params[:search][:name]}%")
     else
       @game_worlds = GameWorld.all
     end
