@@ -5,8 +5,6 @@ class GameWorldsController < ApplicationController
   before_action :set_user, only: %i[show create my_game_worlds]
 
   def index
-
-
     if params[:search]
       @game_worlds = GameWorld.where("name ILIKE ? OR description ILIKE ?", "%#{params[:search][:name]}%", "%#{params[:search][:name]}%")
     else
