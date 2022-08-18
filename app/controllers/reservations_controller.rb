@@ -1,9 +1,9 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show edit update destroy]
   before_action :set_game_world, only: %i[new create]
+  before_action :set_user, only: %i[index]
 
   def index
-    @user = current_user
     @reservations = @user.reservations
   end
 
@@ -28,6 +28,7 @@ class ReservationsController < ApplicationController
 
   def update
     build_reservation_date
+
     save_reservation(:edit)
   end
 
@@ -36,7 +37,15 @@ class ReservationsController < ApplicationController
     redirect_to reservations_path, status: :see_other
   end
 
+  def owner_reservations
+    @reservations = Reservation.where(game_worlds: current_user.game_worlds)
+  end
+
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def reservation_params
     params.require(:reservation).permit(:start_date, :end_date)
