@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show edit update destroy]
+  before_action :set_reservation, only: %i[show edit update destroy owner_reservation]
   before_action :set_game_world, only: %i[new create]
   before_action :set_user, only: %i[index]
 
@@ -39,6 +39,9 @@ class ReservationsController < ApplicationController
 
   def owner_reservations
     @reservations = Reservation.where(game_worlds: current_user.game_worlds)
+  end
+
+  def owner_reservation
   end
 
   private

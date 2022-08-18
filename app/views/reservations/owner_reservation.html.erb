@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Booking request N°<%= @reservation.id %></h1>
+  <h3>In <%= @reservation.game_world.name %></h3>
+  <p class="mb-4">Requested by <%= @reservation.user.username %></p>
+  <p>Start date: <%= @reservation.start_date %></p>
+  <p class="mb-4">End date: <%= @reservation.end_date %></p>
+  <p><%= @reservation.status.capitalize %></p>
+
+  <% if @reservation.status == 'pending' %>
+      <%= simple_form_for(@reservation) do |f| %>
+        <%= f.input :status %>
+        <%= f.submit%>
+      <% end %>
+  <% end %>
+</div>

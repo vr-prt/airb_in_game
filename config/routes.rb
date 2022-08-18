@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/my_game_worlds', to: 'game_worlds#my_game_worlds'
 
   get '/owner_reservations', to: 'reservations#owner_reservations'
-  get '/owner_reservation/:id', to: 'reservations#owner_reservation'
+  get '/owner_reservation/:id', to: 'reservations#owner_reservation', as: :owner_reservation
   get '/owner_reservation/:id', to: 'reservations#edit'
   patch '/owner_reservation/:id', to: 'reservations#update'
 end
