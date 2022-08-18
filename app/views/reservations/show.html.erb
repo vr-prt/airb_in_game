@@ -1,30 +1,45 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-6 log-in-form m-5">
-      <h1>Booking request N°<%= @reservation.id %></h1>
-      <h3>In <%= @reservation.game_world.name %></h3>
-      <p class="mb-4">Hosted by <%= @reservation.game_world.user.username %></p>
-      <p>Start date: <%= @reservation.start_date %></p>
-      <p class="mb-4">End date: <%= @reservation.end_date %></p>
-      <% if @reservation.status == 0 %>
-        <p class="p-3 bg-warning d-inline">Pending</p>
-      <% elsif @reservation.status == 1 %>
-        <p class="p-3 bg-success d-inline">Confirmed</p>
-      <% elsif @reservation.status == 2 %>
-        <p class="p-3 bg-info d-inline">Done</p>
-      <% end %>
+<div class="reservation-page">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-8 log-in-form m-5 p-5">
+        <div>
+          <div class="card-product">
+            <img src="https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp" />
+            <div class="card-product-infos d-flex justify-content-between w-100 align-items-center">
+              <div>
+                <h2>Booking request N°<%= @reservation.id %></h2>
+                <h4>In <%= @reservation.game_world.name %></h4>
+              </div>
+              <div class="d-flex flex-column align-items-center">
+                <p>Start date: <%= @reservation.start_date %></p>
+                <p>End date: <%= @reservation.end_date %></p>
+              </div>
+              <div class="status-reservation">
+                <% if @reservation.status == "pending" %>
+                  <p class="bg-warning d-inline">Pending</p>
+                <% elsif @reservation.status == "confirmed" %>
+                  <p class="bg-success d-inline">Confirmed</p>
+                <% elsif @reservation.status == "done" %>
+                  <p class="bg-info d-inline">Done</p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div class="container d-flex justify-content-center">
-        <div class="mt-5 m-3 btn btn-ghost-reservation btn-reservation">
-          <%= link_to 'Go to my reservations', reservations_path(@reservation) %>
-        </div>
-        <div class="mt-5 m-3 btn btn-success btn-reservation">
-          <%= link_to 'Edit this booking request', edit_reservation_path(@reservation) %>
+        <div class="container d-flex justify-content-center btn-manage-reservation">
+          <div class="m-5 btn btn-ghost-reservation btn-reservation">
+            <%= link_to 'Back', reservations_path(@reservation) %>
+          </div>
+          <div class="m-5 btn btn-success btn-reservation">
+            <%= link_to 'Edit request', edit_reservation_path(@reservation) %>
+          </div>
+
+          <div class="m-5 btn btn-danger btn-reservation">
+            <%= link_to 'Cancel request', reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking request?"} %>
+          </div>
         </div>
 
-        <div class="mt-5 m-3 btn btn-danger btn-reservation">
-          <%= link_to 'Cancel this booking request', reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking request?"} %>
-        </div>
       </div>
     </div>
   </div>
