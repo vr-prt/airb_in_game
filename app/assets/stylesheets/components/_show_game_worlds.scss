@@ -36,3 +36,9 @@
 .show-container {
   position: relative
 }
+
+.show-img {
+  object-fit: fill;
+  height: 500px;
+  width: 700px;
+}

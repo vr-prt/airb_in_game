@@ -64,7 +64,7 @@ class GameWorldsController < ApplicationController
   end
 
   def game_world_params
-    params.require(:game_world).permit(:name, :description, :photo)
+    params.require(:game_world).permit(:name, :description, photos: [])
   end
 
   def save_and_redirect(action)
