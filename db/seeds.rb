@@ -13,17 +13,17 @@ main_game_worlds = [
   GameWorld.new(
     name: 'Super Mario Sunshine',
     description: 'Visit the tropical Isle Delfino, where Mario, Toadsworth, Princess Peach, and five Toads are taking a vacation.',
-    address: '91-295 Papipi Rd, Ewa Beach, HI 96706, United States'
+    address: 'Ewa Beach'
   ),
   GameWorld.new(
     name: 'Pokemon Sword',
     description: 'Become the Pokemon Champion, this time in the new Galar region, which is based on the United Kingdom.',
-    address: 'MPF6+FGX, 2 Avenida Norte, Santa Tecla, El Salvador'
+    address: 'Santa Tecla'
   ),
   GameWorld.new(
     name: 'The Legend of Zelda: Ocarina of Time',
     description: 'Journey through the land of Hyrule, navigate dungeons and an overworld.',
-    address: 'Clare Commons, Clarecastle, Co. Clare, Ireland'
+    address: 'Clarecastle'
   )
 ]
 
