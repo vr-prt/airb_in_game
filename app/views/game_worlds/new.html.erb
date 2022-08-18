@@ -5,14 +5,9 @@
       <%= simple_form_for(@game_world) do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit "Create world", class: "m-3 btn btn-success btn-reservation" %> <%= link_to "Go Back", game_worlds_path, class: "m-3 btn btn-ghost-login btn-reservation" %>
       <% end %>
     </div>
   </div>
-  <%= simple_form_for(@game_world) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %> <%= link_to "Go Back", game_worlds_path, class: "btn btn-go-back" %>
-  <% end %>
 </div>
