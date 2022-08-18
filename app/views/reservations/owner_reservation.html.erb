@@ -13,5 +13,9 @@
         <%= f.input :status, collection: @statuses, include_blank: false %>
         <%= f.submit%>
       <% end %>
+  <% elsif @reservation.status == 'confirmed' %>
+    <div class="mt-5 m-3 btn btn-danger btn-reservation">
+      <%= link_to 'Cancel this booking request', owner_reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking request?"} %>
+    </div>
   <% end %>
 </div>

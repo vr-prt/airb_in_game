@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show edit update destroy owner_reservation]
+  before_action :set_reservation, only: %i[show edit update destroy owner_reservation owner_destroy]
   before_action :set_game_world, only: %i[new create]
   before_action :set_user, only: %i[index]
 
@@ -53,6 +53,11 @@ class ReservationsController < ApplicationController
 
   def owner_reservation
     @statuses = { 'Confirm' => 'confirmed', 'Decline' => 'declined' }
+  end
+
+  def owner_destroy
+    @reservation.destroy
+    redirect_to owner_reservations_path, status: :see_other
   end
 
   private

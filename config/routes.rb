@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get '/owner_reservation/:id', to: 'reservations#owner_reservation', as: :owner_reservation
   get '/owner_reservation/:id', to: 'reservations#edit'
   patch '/owner_reservation/:id', to: 'reservations#update'
+  delete '/owner_reservation/:id', to: 'reservations#owner_destroy'
 end
