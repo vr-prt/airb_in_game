@@ -8,7 +8,9 @@
 
   <% if @reservation.status == 'pending' %>
       <%= simple_form_for(@reservation) do |f| %>
-        <%= f.input :status %>
+        <%= f.input :start_date, as: :hidden %>
+        <%= f.input :end_date, as: :hidden %>
+        <%= f.input :status, collection: @statuses, include_blank: false %>
         <%= f.submit%>
       <% end %>
   <% end %>
