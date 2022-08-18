@@ -5,7 +5,8 @@
       <%= simple_form_for(@game_world) do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
-        <%= f.input :photo, as: :file %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Cover Photo" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Additional Photos" %>
         <%= f.submit "Create world", class: "m-3 btn btn-success btn-reservation" %> <%= link_to "Go Back", game_worlds_path, class: "m-3 btn btn-ghost-login btn-reservation" %>
       <% end %>
     </div>

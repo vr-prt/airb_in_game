@@ -10,16 +10,23 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner show-design">
-        <div class="carousel-item active">
-          <img src="https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp" class="d-block " alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="https://preview.redd.it/uoz70mltoyb11.jpg?auto=webp&s=d9bf6027559928dd47e206dba7afc0c2cdf25f67" class="d-block " alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="https://ssb.wiki.gallery/images/thumb/3/3b/SSBU-Temple.png/1200px-SSBU-Temple.png" class="d-block " alt="...">
-        </div>
-      </div>
+        <%# <div class="carousel-item active">test</div> %>
+
+
+
+          <% @game_world.photos.each_with_index do |photo, index| %>
+            <% if index == 0  %>
+              <div class="carousel-item active">
+                <%= cl_image_tag photo.key, class: "d-block show-img" %>
+              </div>
+            <% else %>
+              <div class="carousel-item">
+                <%= cl_image_tag photo.key, class: "d-block show-img" %>
+              </div>
+            <% end %>
+          <% end %>
+
+
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -29,17 +36,17 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+</div>
 
-    <div class="show-position">
-      <div class="description-show">
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= @game_world.name %></h2>
-            <p><%= @game_world.description %></p>
-          </div>
-        </div>
+<div class="show-position">
+  <div class="description-show">
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @game_world.name %></h2>
+        <p><%= @game_world.description %></p>
       </div>
     </div>
+  </div>
 </div>
 
 <div class="show-position">
