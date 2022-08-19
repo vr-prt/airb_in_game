@@ -4,7 +4,7 @@ class ReservationsController < ApplicationController
   before_action :set_user, only: %i[index]
 
   def index
-    @reservations = @user.reservations
+    @reservations = Reservation.where(user: @user)
   end
 
   def show
