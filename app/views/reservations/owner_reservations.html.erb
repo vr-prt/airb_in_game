@@ -1,4 +1,4 @@
-<div class="reservation-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdnb.artstation.com/p/assets/images/images/002/606/511/large/rakesh-nair-world-map-01.jpg?1463573467);">
+<div class="reservation-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.teahub.io/photos/full/26-268037_basic-wallpapers-55ks9oc.jpg);">
   <div class="container">
     <div class="row justify-content-center">
       <ul class="d-flex">
@@ -10,7 +10,7 @@
                 <div>
                   <div>
                     <%= link_to owner_reservation_path(reservation) do %>
-                      <p style="font-size:20px">Reservation N°<%= reservation.id %></p>
+                      <p style="font-size:20px">Reservation #<%= reservation.id %></p>
                       <p style="font-size: 14px"><%= reservation.game_world.name %></p>
                       <p style="font-size: 14px">from <%= reservation.start_date %> to <%= reservation.end_date %> </p>
                       <p style="font-size: 14px">Requested by by <%= reservation.user.username %></p>

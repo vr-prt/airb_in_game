@@ -25,14 +25,15 @@
             <%= link_to "Home", "/", class: "nav-link" %>
           </li>
           <li class="nav-item">
-
             <%= link_to "My Bookings", reservations_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://res.cloudinary.com/dvbzytnxf/image/upload/v1660835473/Hollowknight_lzisdj.webp", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Profile", "/", class: "dropdown-item text-center mt-1" %>
-              <%= link_to "Add world", new_game_world_path, class: "dropdown-item text-center mt-1" %>
+              <%= link_to "Edit My Profile", edit_user_registration_path, class: "dropdown-item text-center mt-1" %>
+              <%= link_to "My Game Worlds", my_game_worlds_path, class: "dropdown-item text-center mt-1" %>
+              <%= link_to "Pending Bookings", owner_reservations_path, class: "dropdown-item text-center mt-1" %>
+              <%= link_to "Create World", new_game_world_path, class: "dropdown-item text-center mt-1" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item text-center mt-1", data: {turbo_method: :delete} %>
             </div>
           </li>
