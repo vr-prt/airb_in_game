@@ -27,20 +27,8 @@
           </div>
         </div>
 
-        <div class="container d-flex justify-content-center btn-manage-reservation">
-          <div class="m-5 btn btn-ghost-reservation btn-reservation">
-            <%= link_to 'Back', reservations_path(@reservation) %>
-          </div>
-          <div class="m-5 btn btn-success btn-reservation">
-            <%= link_to 'Edit request', edit_reservation_path(@reservation) %>
-          </div>
-
-          <div class="m-5 btn btn-danger btn-reservation">
-            <%= link_to 'Cancel request', reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking request?"} %>
-          </div>
+        <div class="container d-flex justify-content-center">
+            <%= link_to 'Back', reservations_path(@reservation), class: "btn btn-flat m-4" %>
+            <%= link_to 'Edit request', edit_reservation_path(@reservation), class: "btn btn-flat m-4", style: "background-color:#62E7AC" %>
+            <%= link_to 'Cancel request', reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking request?"}, class: "btn btn-flat m-4", style: "background-color:red" %>
         </div>
-
-      </div>
-    </div>
-  </div>
-</div>
