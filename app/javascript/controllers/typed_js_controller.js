@@ -5,8 +5,8 @@ import Typed from "typed.js"
 export default class extends Controller {
   connect() {
     new Typed(this.element, {
-      strings: ["Discover the Future, explore all the worlds of your favorites games", "Welcome in AirB in Game"],
-      typeSpeed: 1000,
+      strings: ["Explore the worlds of your favorites games", "Welcome in AirB in Game"],
+      typeSpeed: 100,
       loop: true
     })
   }
