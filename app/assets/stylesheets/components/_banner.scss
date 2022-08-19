@@ -10,9 +10,10 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 48px;
   font-weight: bold;
   margin-bottom: 20px;
+  font-family: 'Silkscreen', cursive;
 }
 
 .banner p {
@@ -64,9 +65,10 @@
 }
 
 .banner-icons {
-  height: 200px;
+  height: 600px;
+  display: flex;
 }
 
-.btn-homepage {
-  margin-left: 350px;
+.main-title {
+ margin-top: 150px;
 }
