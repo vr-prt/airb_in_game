@@ -9,11 +9,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid lightgrey;
-  background: #AABBC3;
+  border: 1px solid #fff;
+  background: #fff;
 }
 .footer-links a {
-  color: white;
+  color: #30475E;
   opacity: .5;
   text-decoration: none;
   font-size: 24px;
@@ -21,7 +21,7 @@
 }
 .footer-links a:hover {
   opacity: 1;
-  color: #30475E;
+  color: #D0851D;
 }
 
 .footer-text {

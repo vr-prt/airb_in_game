@@ -1,13 +1,13 @@
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center edit-form">
         <div class="col-sm-6 log-in-form m-5">
-      <h1>Change booking request N°<%= @reservation.id %></h1>
+      <h1 class="mt-3">Change booking request N°<%= @reservation.id %></h1>
       <h3>Inside <%= @reservation.game_world.name %></h3>
       <p class="mb-4">Hosted by <%= @reservation.game_world.user.username %></p>
       <%= simple_form_for(@reservation) do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-        <%= f.submit %> <%= link_to "Go Back", reservations_path, class: "btn btn-go-back" %>
+        <%= f.submit "update" ,class: "btn btn-ghost update-btn" %> <%= link_to "Go Back", reservations_path, class: "btn btn-ghost-login btn-reservation" %>
       <% end %>
     </div>
   </div>

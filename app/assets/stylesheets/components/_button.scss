@@ -1,7 +1,7 @@
 .btn-ghost {
   display: flex;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #30475E;
+  border: 1px solid #30475E;
   border-radius: 50px;
   font-weight: bold;
   transition: opacity 0.3s ease;
@@ -12,12 +12,13 @@
 }
 
 .btn-ghost-reservation:hover {
-  border: 1px solid #30475E;
+  border: 1px solid #fff;
   background-color: #30475E;
 }
 
 .btn-ghost-login:hover {
-  border: 1px solid #30475E;
+  border: 1px solid #fff;
+  text-decoration: underline;
   background-color: #30475E;
   color: #fff;
 }
@@ -38,8 +39,9 @@
 
 .btn-ghost-reservation {
   display: flex;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #30475E;
+  background-color: #30475E;
+  border: 1px solid #30475E;
   border-radius: 50px;
   font-weight: bold;
   transition: opacity 0.3s ease;
@@ -93,8 +95,15 @@
 
 .added-btn a {
   text-decoration: none;
-  color: white;
- }
+  color: fff;
+  background: #D0851D;
+  font-family: 'Silkscreen', cursive;
+}
+
+.added-btn:hover {
+  border: #fff 1px solid;
+  color: #fff;
+}
 
 .btn-go-back {
     appearance: auto;
@@ -137,4 +146,14 @@
   font-size: 16px;
   padding: 8px;
   border-radius: 8px;
+}
+
+.update-btn {
+  width: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-map-add {
+  justify-content: space-around;
 }
