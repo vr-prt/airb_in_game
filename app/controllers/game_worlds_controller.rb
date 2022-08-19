@@ -25,6 +25,12 @@ class GameWorldsController < ApplicationController
   end
 
   def show
+    @marker =
+      [{
+        lat: @game_world.latitude,
+        lng: @game_world.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {game_world: @game_world})
+      }]
   end
 
   def create
