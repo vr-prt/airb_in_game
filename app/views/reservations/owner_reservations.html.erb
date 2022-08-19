@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-8">
-        <h2 class="text-center mt-5 booking-title">My bookings request</h2>
+        <h2 class="text-center mt-5 booking-title">My booking requests</h2>
           <% @reservations.each do |reservation| %>
             <div class="card-product">
               <%= cl_image_tag reservation.game_world.photos.first.key, class: "d-block show-img" %>
@@ -25,6 +25,8 @@
                     <p class="bg-success d-inline mr-3">Confirmed</p>
                   <% elsif reservation.status == "done" %>
                     <p class="bg-info d-inline">Done</p>
+                  <% else  %>
+                    <p style="background-color:red;" class="d-inline">Decline</p>
                   <% end %>
                 </div>
               </div>

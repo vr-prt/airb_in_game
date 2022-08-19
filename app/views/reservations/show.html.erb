@@ -21,6 +21,8 @@
                   <p class="bg-success d-inline">Confirmed</p>
                 <% elsif @reservation.status == "done" %>
                   <p class="bg-info d-inline">Done</p>
+                <% else %>
+                  <p style="background-color:red;" class="d-inline">Decline</p>
                 <% end %>
               </div>
             </div>
