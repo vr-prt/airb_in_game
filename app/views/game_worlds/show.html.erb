@@ -1,32 +1,26 @@
-<div class="show-position">
+<div class="d-flex justify-content-center">
   <h1><%= @game_world.name %></h1>
 </div>
 
 <div class="container card-show">
-    <div id="carouselExampleIndicators" class="carousel slide show-position " data-bs-ride="true">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner show-design">
-        <%# <div class="carousel-item active">test</div> %>
-
-
-
-          <% @game_world.photos.each_with_index do |photo, index| %>
-            <% if index == 0  %>
-              <div class="carousel-item active">
-                <%= cl_image_tag photo.key, class: "d-block show-img" %>
-              </div>
-            <% else %>
-              <div class="carousel-item">
-                <%= cl_image_tag photo.key, class: "d-block show-img" %>
-              </div>
-            <% end %>
-          <% end %>
-
-
+  <div id="carouselExampleIndicators" class="carousel slide d-flex justify-content-center" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner show-design">
+      <% @game_world.photos.each_with_index do |photo, index| %>
+        <% if index == 0  %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, class: "d-block show-img" %>
+          </div>
+        <% else %>
+          <div class="carousel-item">
+            <%= cl_image_tag photo.key, class: "d-block show-img" %>
+          </div>
+        <% end %>
+      <% end %>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -36,21 +30,20 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+  </div>
 </div>
 
-<div class="show-position">
-  <div class="description-show">
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= @game_world.name %></h2>
-        <p><%= @game_world.description %></p>
-      </div>
+<div class="d-flex justify-content-center">
+  <div class="show-description">
+    <div>
+      <h4><%= @game_world.name %></h4>
+      <p><%= @game_world.description %></p>
     </div>
   </div>
 </div>
 
-<div class="show-position">
-  <%= link_to "Reserve Now", new_game_world_reservation_path(@game_world), class: "m-3 btn btn-flat" %>
+<div class="d-flex justify-content-center">
+  <%= link_to "Reserve Now", new_game_world_reservation_path(@game_world), class: "m-3 btn btn-flat mb-50" %>
   <% if @game_world.user == @user %>
   <div>
     <%= link_to "Edit", edit_game_world_path(@game_world), class: "m-3 btn btn-flat", style: "background-color:lightblue" %>

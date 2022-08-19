@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
-        <div class="col-sm-6 log-in-form m-5">
-      <h1>Change booking request N°<%= @reservation.id %></h1>
+    <div class="col-sm-6 log-in-form m-5">
+      <h1>Change booking request #<%= @reservation.id %></h1>
       <h3>Inside <%= @reservation.game_world.name %></h3>
       <p class="mb-4">Hosted by <%= @reservation.game_world.user.username %></p>
       <%= simple_form_for(@reservation) do |f| %>
