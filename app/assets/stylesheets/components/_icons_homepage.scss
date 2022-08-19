@@ -1,5 +1,5 @@
 .icons-homepage {
-  color: #30475E;
+  color: white;
   font-size: 72px;
   display: flex;
   align-items: center;
@@ -8,14 +8,15 @@
 }
 
 .icons-homepage p {
+  font-family: 'Silkscreen', cursive;
   font-size: 24px;
   font-weight: bold;
-  color: #30475E;
+  color: white;
   opacity: 1;
 }
 
 .icon-homepage {
-  border: #30475E 0.2px solid;
+  border: white 0.2px solid;
   border-radius: 8px;
   width: 260px;
   height: 240px;
@@ -28,7 +29,7 @@
 
 .typed-js {
   font-size: 32px;
-  color: #30475E;
+  color: white;
   font-family: 'Silkscreen', cursive;
   width: 100%;
   text-align: center;
