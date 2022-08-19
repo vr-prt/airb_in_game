@@ -6,7 +6,7 @@
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Cover Photo" %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Additional Photos" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Additional Photos, Max of 2 Photos." %>
         <%= f.submit "Create world", class: "m-3 btn btn-flat", style: "background-color:#62E7AC" %> <%= link_to "Go Back", game_worlds_path, class: "m-3 btn-flat" %>
       <% end %>
     </div>
