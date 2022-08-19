@@ -5,7 +5,7 @@
         <h2 class="text-center mt-5 booking-title">My bookings request</h2>
           <% @reservations.each do |reservation| %>
             <div class="card-product">
-              <img src="https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp" />
+              <%= cl_image_tag reservation.game_world.photos.first.key, class: "d-block show-img" %>
               <div class="card-product-infos d-flex justify-content-around w-100 align-items-center">
                 <div class="w-80">
                   <%= link_to owner_reservation_path(reservation) do %>

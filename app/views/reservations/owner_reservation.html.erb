@@ -13,7 +13,7 @@
             <%= f.input :start_date, as: :hidden %>
             <%= f.input :end_date, as: :hidden %>
             <%= f.input :status, collection: @statuses, include_blank: false %>
-            <%= f.submit%> <%= link_to "Go Back", owner_reservations_path, class: "btn btn-go-back" %>
+            <%= f.submit class: "m-3 btn btn-flat", style: "background-color:#62E7AC" %> <%= link_to "Go Back", owner_reservations_path, class: "btn btn-flat" %>
           <% end %>
       <% elsif @reservation.status == 'confirmed' %>
         <div class="container d-flex justify-content-center">
