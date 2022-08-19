@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-sm-8">
         <h2 class="text-center mt-5 booking-title">My booking requests</h2>
-          <% @reservations.each do |reservation| %>
+          <% @reservations.order(:status).each do |reservation| %>
             <div class="card-product">
               <%= cl_image_tag reservation.game_world.photos.first.key, class: "d-block show-img" %>
               <div class="card-product-infos d-flex justify-content-around w-100 align-items-center">
