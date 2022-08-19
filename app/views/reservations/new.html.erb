@@ -7,7 +7,7 @@
       <%= simple_form_for([@game_world, @reservation]) do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-        <%= f.submit%> <%= link_to "Go Back", game_world_path(@game_world), class: "btn btn-go-back" %>
+        <%= f.submit class: "btn btn-flat m-4", style: "background-color:#62E7AC" %> <%= link_to "Go Back", game_world_path(@game_world), class: "btn btn-go-back", class: "btn btn-flat m-4" %>
       <% end %>
     </div>
   </div>

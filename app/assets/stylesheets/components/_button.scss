@@ -2,13 +2,13 @@
   display: flex;
   color: #30475E;
   border: 1px solid #30475E;
-  border-radius: 50px;
   font-weight: bold;
-  transition: opacity 0.3s ease;
-  display: flex;
-  width: 210px;
   justify-content: center;
   left: 50%;
+  font-family: 'Silkscreen', cursive;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
 .btn-ghost-reservation:hover {
@@ -60,7 +60,9 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
+  text-align: center;
   background: #D0851D;
+  text-decoration: none;
   transition: background 0.3s ease;
 }
 

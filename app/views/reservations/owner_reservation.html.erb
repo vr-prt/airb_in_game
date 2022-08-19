@@ -16,12 +16,10 @@
             <%= f.submit%> <%= link_to "Go Back", owner_reservations_path, class: "btn btn-go-back" %>
           <% end %>
       <% elsif @reservation.status == 'confirmed' %>
-        <div class="mt-5 m-3 btn btn-danger btn-reservation">
-          <%= link_to 'Cancel this booking request', owner_reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking request?"} %>
+        <div class="container d-flex justify-content-center">
+          <%= link_to 'Cancel this booking request', owner_reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking request?"}, class: "btn btn-flat m-4", style: "background-color:red" %>
+          <%= link_to 'Back', owner_reservations_path, class: "btn btn-flat m-4" %>
         </div>
-          <div class="m-5 btn btn-ghost-reservation btn-reservation">
-            <%= link_to 'Back', owner_reservations_path %>
-          </div>
       <% end %>
     </div>
   </div>

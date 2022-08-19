@@ -4,7 +4,7 @@
       <%= simple_form_for(@game_world) do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
-        <%= f.submit %> <%= link_to "Go Back", game_worlds_path, class: "btn btn-go-back" %>
+        <%= f.submit class: "btn btn-flat m-4", style: "background-color:#62E7AC" %> <%= link_to "Go Back", game_worlds_path, class: "btn btn-go-back", class: "btn btn-flat m-4"  %>
       <% end %>
     </div>
   </div>

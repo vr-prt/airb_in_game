@@ -7,7 +7,7 @@
         <%= f.input :description %>
         <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Cover Photo" %>
         <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Additional Photos" %>
-        <%= f.submit "Create world", class: "m-3 btn btn-success btn-reservation" %> <%= link_to "Go Back", game_worlds_path, class: "m-3 btn btn-ghost-login btn-reservation" %>
+        <%= f.submit "Create world", class: "m-3 btn btn-flat", style: "background-color:#62E7AC" %> <%= link_to "Go Back", game_worlds_path, class: "m-3 btn-flat" %>
       <% end %>
     </div>
   </div>

@@ -7,7 +7,7 @@
       <%= simple_form_for(@reservation) do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-        <%= f.submit "update" ,class: "btn btn-ghost update-btn" %> <%= link_to "Go Back", reservations_path, class: "btn btn-ghost-login btn-reservation" %>
+        <%= f.submit "update" ,class: "btn btn-flat", style: "background:#62E7AC" %> <%= link_to "Go Back", reservations_path, class: "btn btn-flat" %>
       <% end %>
     </div>
   </div>
