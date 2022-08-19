@@ -3,7 +3,7 @@
         <h2 class="text-center">My Game Worlds</h2>
     </div>
   <div class="d-flex justify-content-center">
-      <p class="text-center m-5 btn btn-ghost"><%= link_to "+ Add World", new_game_world_path %></p>
+      <p><%= link_to "+ Add World", new_game_world_path, class: "text-center added-btn m-4 btn btn-ghost" %></p>
   </div>
   <%= render '/shared/game_worlds_cards' %>
 </div>
