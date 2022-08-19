@@ -1,16 +1,16 @@
 .footer {
   display: flex;
   justify-content: space-around;
-  position: fixed;
   bottom: 0;
-  width: calc(100% - var(--scrollbar-gutter,0%));
 }
+
 .footer-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #fff;
-  background: #fff;
+  // border: 1px solid lightgrey;
+  background: transparent;
+  // background: linear-gradient(90deg, rgba(14,20,35,1) 0%, rgba(7,51,81,1) 50%, rgba(39,42,53,1) 67%);
 }
 .footer-links a {
   color: #30475E;
@@ -30,4 +30,5 @@
   margin-top: 15px;
   align-items: center;
   text-align: center;
+  color: white;
 }
