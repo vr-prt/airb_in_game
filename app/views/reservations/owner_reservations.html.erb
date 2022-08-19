@@ -1,28 +1,36 @@
-<div class="reservation-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.teahub.io/photos/full/26-268037_basic-wallpapers-55ks9oc.jpg);">
+<div class="reservation-page">
   <div class="container">
     <div class="row justify-content-center">
-      <ul class="d-flex">
-        <% @reservations.each do |reservation| %>
-          <li>
-            <div class="card-trip m-2">
+      <div class="col-sm-8">
+        <h2 class="text-center mt-5 booking-title">My bookings request</h2>
+          <% @reservations.each do |reservation| %>
+            <div class="card-product">
               <img src="https://res.cloudinary.com/dvbzytnxf/image/upload/v1660599824/hyrule_urn1yb.webp" />
-              <div class="card-trip-infos">
-                <div>
-                  <div>
-                    <%= link_to owner_reservation_path(reservation) do %>
-                      <p style="font-size:20px">Reservation #<%= reservation.id %></p>
-                      <p style="font-size: 14px"><%= reservation.game_world.name %></p>
-                      <p style="font-size: 14px">from <%= reservation.start_date %> to <%= reservation.end_date %> </p>
-                      <p style="font-size: 14px">Requested by by <%= reservation.user.username %></p>
-                    <% end %>
-                  </div>
-                  <h6 class="status-tag"><%= reservation.status == "confirmed" ? "✅" : "⏳" %></h6>
+              <div class="card-product-infos d-flex justify-content-around w-100 align-items-center">
+                <div class="w-80">
+                  <%= link_to owner_reservation_path(reservation) do %>
+                    <h2>Booking request N°<%= reservation.id %></h2>
+                  <% end %>
+                  <h4 id="world-name-card-reservation">In <%= reservation.game_world.name %></h4>
+                  <p>Requested by <%= reservation.user.username %></p>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <p>from <%= reservation.start_date %></p>
+                  <p>to <%= reservation.end_date %></p>
+                </div>
+                <div class="status-reservation">
+                  <% if reservation.status == "pending" %>
+                    <p class="bg-warning d-inline">Pending</p>
+                  <% elsif reservation.status == "confirmed" %>
+                    <p class="bg-success d-inline mr-3">Confirmed</p>
+                  <% elsif reservation.status == "done" %>
+                    <p class="bg-info d-inline">Done</p>
+                  <% end %>
                 </div>
               </div>
             </div>
-          </li>
-        <% end %>
-      </ul>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>
