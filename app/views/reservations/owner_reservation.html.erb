@@ -1,12 +1,33 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-sm-6 log-in-form m-5">
-      <h1>Booking request #<%= @reservation.id %></h1>
-      <h3>In <%= @reservation.game_world.name %></h3>
-      <p class="mb-4">Requested by <%= @reservation.user.username %></p>
-      <p>Start date: <%= @reservation.start_date %></p>
-      <p class="mb-4">End date: <%= @reservation.end_date %></p>
-      <p><%= @reservation.status.capitalize %></p>
+    <div class="col-sm-6 m-5">
+      <div class="card-product">
+              <%= cl_image_tag @reservation.game_world.photos.first.key, class: "d-block show-img" %>
+              <div class="card-product-infos d-flex justify-content-around w-100 align-items-center">
+                <div class="w-80">
+                  <%= link_to owner_reservation_path(@reservation) do %>
+                    <h2>Booking request N°<%= @reservation.id %></h2>
+                  <% end %>
+                  <h4 id="world-name-card-reservation">In <%= @reservation.game_world.name %></h4>
+                  <p>Requested by <%= @reservation.user.username %></p>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <p>from <%= @reservation.start_date %></p>
+                  <p>to <%= @reservation.end_date %></p>
+                </div>
+                <div class="status-reservation">
+                  <% if @reservation.status == "pending" %>
+                    <p class="bg-warning d-inline">Pending</p>
+                  <% elsif @reservation.status == "confirmed" %>
+                    <p class="bg-success d-inline mr-3">Confirmed</p>
+                  <% elsif @reservation.status == "done" %>
+                    <p class="bg-info d-inline">Done</p>
+                  <% else  %>
+                    <p style="background-color:red;" class="d-inline">Declined</p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
 
       <% if @reservation.status == 'pending' %>
           <%= simple_form_for(@reservation) do |f| %>
