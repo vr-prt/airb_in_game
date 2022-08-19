@@ -11,6 +11,7 @@ puts "Creating the main user..."
 main_user = User.create(username: "airbingame", email: "a@a.a", password: "abc1234")
 puts "Main user #{main_user.username} created"
 
+puts "Creating main game worlds..."
 main_game_worlds = [
   GameWorld.new(
     name: 'Super Mario Sunshine',
@@ -41,8 +42,10 @@ main_game_worlds[2].photos.attach(io: zelda_image, filename: 'zelda.jpg')
 main_game_worlds.each do |game_world|
   game_world.user = main_user
   game_world.save!
+  puts "Game World #{game_world.name} successfully saved"
 end
 
+puts "Creating main reservations..."
 reservation1 = Reservation.new(
   start_date: Date.new(2022, 8, 23),
   end_date: Date.new(2022, 8, 27),
@@ -86,7 +89,7 @@ puts 'Main data successfully added'
 puts '--------------------------------'
 
 puts 'Generating random users, game worlds and reservations...'
-20.times do
+9.times do
   user = User.create(
     username: Faker::Internet.username(specifier: 10),
     email: Faker::Internet.email,
@@ -100,8 +103,8 @@ puts 'Generating random users, game worlds and reservations...'
     description: Faker::Quote.yoda
   )
 
-  game_image = URI.open("https://picsum.photos/500/500")
-  game_world.photos.attach(io: game_image, filename: 'pokemon.jpg')
+  game_image = URI.open("https://res.cloudinary.com/hollywoodxj/image/upload/v1660873436/development/a8rf1tas3q2xoikq5vl1ijtl43i8.jpg")
+  game_world.photos.attach(io: game_image, filename: 'wow.jpg')
 
   game_world.user = user
   game_world.save!
